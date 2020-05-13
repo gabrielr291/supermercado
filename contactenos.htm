@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/estilos.css" type="text/css" rel="stylesheet">
+    <title>Contacto - Supermercado La Fama</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="img/logo.png" id="logo">
+        </div>
+        <ol>
+            <li>
+                <a href="index.htm">Home</a>
+            </li>
+            <li>
+                <a href="galeria.htm">Productos</a>
+            </li>
+            <li>
+                <a href="formulario.htm">Ingreso Productos</a>
+            </li>
+            <li>
+                <a href="contactenos.htm">Contacto</a>
+            </li>
+            <li>
+                <a href="quienes_somos.htm">Quienes Somos</a>
+            </li>
+            <li>
+                <a href="ubicacion.htm">Ubicacion Y Horarios</a>
+            </li>
+        </ol>
+    </header>>
+    <section>
+        <h2>contactenos</h2>
+        <script src="js/formulario.js"></script>
+        <script src="js/jquery.js"></script>
+        <script>
+            $(document).ready(
+                function(event) {
+                    $("#btnFormu").click(function() {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'formulario.php',
+                            data: $("#contact").serialize(),
+                            success: function(data) {
+                                alert(data);
+                            }
+                        });
+                    });
+                }
+            )
+        </script>
+        <center>
+            <form id="contact">
+                <table>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>
+                            <input type="text" name="txtNombre" id="txtNombre"> </td>
+                    </tr>
+                    <tr>
+                        <td>Apellido</td>
+                        <td>
+                            <input type="text" name="txtApellido" id="txtNombre">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>
+                            <input type="text" name="txtMail" id="txtNombre">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rut</td>
+                        <td>
+                            <input type="text" name="txtRut" id="txtNombre">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Telefono</td>
+                        <td>
+                            <input type="text" name="txtTelefono" id="txtNombre">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mensaje</td>
+                        <td>
+                            <input type="text" name="txtMensaje" id="txtNombre">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <center>
+                                <button id="btnFormu">Enviar formulario</button>
+                            </center>
+
+
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </center>
+    </section>
+
+</body>
+
+</html>
